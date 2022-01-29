@@ -36,6 +36,20 @@ entry:
 		MOV		ES,AX
 
 		MOV		SI,msg
+
+;=======	clear screen
+		mov		AX,	0600h
+		mov		BX,	0700h
+		mov		CX,	0
+		mov		DX,	0184fh
+		int		10h	
+
+;=======	set focus
+		mov		AX,	0200h
+		mov		BX,	0000h
+		mov		DX,	0000h
+		int		10h
+		
 putloop:
 		MOV		AL,[SI]
 		ADD		SI,1			; 给SI加1
