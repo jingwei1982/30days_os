@@ -29,9 +29,9 @@ SCRNX	EQU		0x0ff4			; 分辨率X
 SCRNY	EQU		0x0ff6			; 分辨率Y
 VRAM	EQU		0x0ff8			; 图像缓冲区的起始地址
 
-		MOV		AL,0x13			; VGA显卡，320x200x8bit
-		MOV		AH,0x00
-		INT		0x10
+		; MOV		AL,0x13			; VGA显卡，320x200x8bit
+		; MOV		AH,0x00
+		; INT		0x10
 		MOV		BYTE [VMODE],8	; 屏幕的模式（参考C语言的引用）
 		MOV		WORD [SCRNX],320
 		MOV		WORD [SCRNY],200
