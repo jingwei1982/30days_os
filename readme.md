@@ -20,7 +20,13 @@ day03a: display改成函数调用，添加读一个扇区的功能.已知问题�
 
 day03b: 教材上是固定写haribote.nas地址，然后读入固定的柱面，有很多局限性，现在ipl.asm中增加搜索haribote.bin的代码，会用到FAT和根目录搜索。碰到的问题，将haribote.bin放到0x820:0000会出错，但放在0x1000:0000却是正常的。
 
+day03g: 进入haribote，打印了一个L验证正确进入了haribote。
+
+day03g1: make run后会显示"SLDT: not recognized in real or virtual-8086 mode", 改变的是添加了[section .text]。
+
 day03h: 和教材保持一致，但是去掉了org 0xc200,这是因为day03b的改动引起的。
+
+day03j:加入了汇编和C混合编程。
 
 
 
