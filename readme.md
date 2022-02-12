@@ -26,7 +26,11 @@ day03g1: make run后会显示"SLDT: not recognized in real or virtual-8086 mode"
 
 day03h: 和教材保持一致，但是去掉了org 0xc200,这是因为day03b的改动引起的。
 
-day03j:加入了汇编和C混合编程。
+day03j:加入了汇编和C混合编程，编译为elf格式，通过loader将kernel加载进内存，并跳转到Ttext入口。
+
+day04a: 汇编和C互相调用，可以正常显示纯白屏幕。
+
+day04f: 可以显示窗口。
 
 
 
