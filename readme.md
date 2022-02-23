@@ -53,3 +53,9 @@ day06d: PIC, 调整目录后，c文件无法跳转到.h文件，添加.vscode来
 day06e: IDT设置卡了我好长时间，最终把dsctbl.c和loader.asm中设置为一致后解决。
 
 day07a: 重写sprintf，现在可以正常打印变量。
+
+day07b: 移除int 06/08/0c. 修改了boxfill长度设置。
+
+day07c: FIFO.
+
+day07f: mouse can work.
