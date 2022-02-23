@@ -32,6 +32,24 @@ day04a: 汇编和C互相调用，可以正常显示纯白屏幕。
 
 day04f: 可以显示窗口。
 
+day05b: 结构体。
 
+day05e: 添加hankaku字体，直接添加在.h文件中。
 
+day05f: 注意c语言中'和"的差异，在python中是一样，但c中一个是字符，一个是字符串，完全不同的东西。
 
+day05g: 打印变量失败，错误如下，没搞定
+ld -m elf_i386 -Ttext 0x030400 -s naskfunc.o bootpack.o -o haribote.bin
+ld: bootpack.o: in function `HariMain':
+bootpack.c:(.text+0x6d): undefined reference to `sprintf'
+make: *** [makefile:41: haribote.bin] Error 1
+
+day05i: 设置GDT/IDT.
+
+day06c: 调整目录架构。
+
+day06d: PIC, 调整目录后，c文件无法跳转到.h文件，添加.vscode来解决此问题。
+
+day06e: IDT设置卡了我好长时间，最终把dsctbl.c和loader.asm中设置为一致后解决。
+
+day07a: 重写sprintf，现在可以正常打印变量。
