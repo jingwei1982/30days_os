@@ -16,7 +16,7 @@ A: xxd -a -u -g 1 xxx.bin或者hexdump -C xxx.bin
 
 day02a: 增加清屏和设置cursor。
 
-day03a: display改成函数调用，添加读一个扇区的功能.已知问题，打印比较乱，回车后cusor没有回到最左边。
+day03a: display改成函数调用，添加读一个扇区的功能.已知问题，打印比较乱，回车后cursor没有回到最左边。
 
 day03b: 教材上是固定写haribote.nas地址，然后读入固定的柱面，有很多局限性，现在ipl.asm中增加搜索haribote.bin的代码，会用到FAT和根目录搜索。碰到的问题，将haribote.bin放到0x820:0000会出错，但放在0x1000:0000却是正常的。
 
@@ -43,6 +43,7 @@ ld -m elf_i386 -Ttext 0x030400 -s naskfunc.o bootpack.o -o haribote.bin
 ld: bootpack.o: in function `HariMain':
 bootpack.c:(.text+0x6d): undefined reference to `sprintf'
 make: *** [makefile:41: haribote.bin] Error 1
+在day07a中解决此问题。
 
 day05i: 设置GDT/IDT.
 
@@ -50,7 +51,7 @@ day06c: 调整目录架构。
 
 day06d: PIC, 调整目录后，c文件无法跳转到.h文件，添加.vscode来解决此问题。
 
-day06e: IDT设置卡了我好长时间，最终把dsctbl.c和loader.asm中设置为一致后解决。
+day06e: IDT设置卡了我好长时间，最终把dsctbl.c和loader.asm中GDT设置为一致后解决。
 
 day07a: 重写sprintf，现在可以正常打印变量。
 
