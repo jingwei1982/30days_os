@@ -57,6 +57,7 @@ void putblock8_8(char *vram, int vxsize, int pxsize,
 				 int pysize, int px0, int py0, char *buf, int bxsize);
 void make_window8(unsigned char *buf, int xsize, int ysize, char *title);
 
+
 /* dsctbl.c */
 struct SEGMENT_DESCRIPTOR
 {
@@ -251,3 +252,4 @@ void timer_settime(struct TIMER *timer, unsigned int timeout);
 void inthandler20(int *esp);
 
 void putfonts8_asc_sht(struct SHEET *sht, int x, int y, int c, int b, char *s, int l);
+void make_textbox8(struct SHEET *sht, int x0, int y0, int sx, int sy, int c);

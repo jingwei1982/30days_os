@@ -9,7 +9,7 @@ void HariMain(void)
 	char s[40];
 	int fifobuf[128];
 	struct FIFO32 fifo;
-	int mx, my, i;
+	int mx, my, i, cursor_x=8,cursor_c=COL8_FFFFFF;
 	unsigned int memtotal, count = 0;
 	struct MOUSE_DEC mdec;
 	struct MEMMAN *memman = (struct MEMMAN *)MEMMAN_ADDR;
@@ -69,6 +69,7 @@ void HariMain(void)
 	sheet_setbuf(sht_mouse, buf_mouse, 16, 16, 99); /* 透明色号99 */
 	init_screen(buf_back, binfo->scrnx, binfo->scrny);
 	make_window8(buf_win, 160, 52, "window");
+	make_textbox8(sht_win, 8, 28, 144, 16, COL8_FFFFFF);
 	init_mouse_cursor8(buf_mouse, 99); /* 背景色号99 */
 	sheet_slide(sht_back, 0, 0);
 	sheet_slide(sht_win, 80, 72);
@@ -90,7 +91,7 @@ void HariMain(void)
 		io_cli();
 		if (fifo32_status(&fifo) == 0)
 		{
-			io_sti();
+			io_stihlt();
 		}
 		else
 		{
@@ -101,12 +102,20 @@ void HariMain(void)
 				sprintf(s, "%02X", i - 256);
 				putfonts8_asc_sht(sht_back, 0, 16, COL8_FFFFFF, COL8_008484, s, 2);
 				if (i < 0x54 + 256) {
-					if (keytable[i - 256] != 0) {
+					if (keytable[i - 256] != 0&&cursor_x<144) 
+					{ //一般字符
 						s[0] = keytable[i - 256];
 						s[1] = 0;
-						putfonts8_asc_sht(sht_win, 40, 28, COL8_000000, COL8_C6C6C6, s, 1);
-
+						putfonts8_asc_sht(sht_win, cursor_x, 28, COL8_000000, COL8_C6C6C6, s, 1);
+						cursor_x += 8;
 					}
+					if(i==256+0xe&&cursor_x>8)	//退格键
+					{
+						putfonts8_asc_sht(sht_win, cursor_x, 28, COL8_000000, COL8_FFFFFF, "", 1);
+						cursor_x -= 8;
+					}
+					boxfill8(sht_win->buf, sht_win->bxsize, cursor_c, cursor_x, 28, cursor_x + 7, 43);
+					sheet_refresh(sht_win, cursor_x, 28, cursor_x + 8, 44);
 				}
 			}
 			else if (512<=i&&i<=767)		//mouse
@@ -149,7 +158,11 @@ void HariMain(void)
 					}
 					sprintf(s, "(%3d, %3d)", mx, my);
 					putfonts8_asc_sht(sht_back, 0, 0, COL8_FFFFFF, COL8_008484, s, 10);
-					sheet_slide(sht_mouse,mx,my);
+					if((mdec.btn&0x01)!=0)
+					{
+						sheet_slide(sht_win,mx-80,my-8);
+					}
+					
 				}
 			}
 			else if(i==10)
@@ -165,15 +178,16 @@ void HariMain(void)
 				if (i != 0)
 				{
 					timer_init(timer3, &fifo, 0); /* 然后设置0 */
-					boxfill8(buf_back, binfo->scrnx, COL8_FFFFFF, 8, 96, 15, 111);
+					cursor_c = COL8_000000;
 				}
 				else
 				{
 					timer_init(timer3, &fifo, 1); /* 然后设置1 */
-					boxfill8(buf_back, binfo->scrnx, COL8_008484, 8, 96, 15, 111);
+					cursor_c = COL8_FFFFFF;
 				}
 				timer_settime(timer3, 50);
-				sheet_refresh(sht_back, 8, 96, 16, 112);
+				boxfill8(sht_win->buf, sht_win->bxsize, cursor_c, cursor_x,28,cursor_x+7, 43);
+				sheet_refresh(sht_win, cursor_x, 28, cursor_x+8,44);
 			}	
 		}
 	}
