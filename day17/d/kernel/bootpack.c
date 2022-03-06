@@ -147,7 +147,7 @@ void HariMain(void)
 
 				if (i == 256 + 0xe) //退格键
 				{
-					if (key_to = 0)
+					if (key_to == 0)
 					{
 						if (cursor_x > 8)
 						{

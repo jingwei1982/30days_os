@@ -139,7 +139,7 @@ void HariMain(void)
 					}
 					if (i == 256 + 0xe && cursor_x > 8) //退格键
 					{
-						putfonts8_asc_sht(sht_win, cursor_x, 28, COL8_000000, COL8_FFFFFF, "", 1);
+						putfonts8_asc_sht(sht_win, cursor_x, 28, COL8_000000, COL8_FFFFFF, " ", 1);
 						cursor_x -= 8;
 					}
 					if (i == 256 + 0x0f)

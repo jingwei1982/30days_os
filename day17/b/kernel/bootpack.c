@@ -16,7 +16,7 @@ void HariMain(void)
 	struct MOUSE_DEC mdec;
 	struct MEMMAN *memman = (struct MEMMAN *)MEMMAN_ADDR;
 	struct SHTCTL *shtctl;
-	struct SHEET *sht_back, *sht_mouse, *sht_win,*sht_cons;
+	struct SHEET *sht_back, *sht_mouse, *sht_win, *sht_cons;
 	unsigned char *buf_back, buf_mouse[256], *buf_win, *buf_cons;
 	struct TIMER *timer;
 	struct SEGMENT_DESCRIPTOR *gdt = (struct SEGMENT_DESCRIPTOR *)ADR_GDT;
@@ -75,7 +75,7 @@ void HariMain(void)
 	task_cons->tss.fs = 1 * 8;
 	task_cons->tss.gs = 1 * 8;
 	*((int *)(task_cons->tss.esp + 4)) = (int)sht_cons;
-	task_run(task_cons, 2,2);
+	task_run(task_cons, 2, 2);
 
 	// sht_win
 	sht_win = sheet_alloc(shtctl);
@@ -138,7 +138,7 @@ void HariMain(void)
 					}
 					if (i == 256 + 0xe && cursor_x > 8) //退格键
 					{
-						putfonts8_asc_sht(sht_win, cursor_x, 28, COL8_000000, COL8_FFFFFF, "", 1);
+						putfonts8_asc_sht(sht_win, cursor_x, 28, COL8_000000, COL8_FFFFFF, " ", 1);
 						cursor_x -= 8;
 					}
 					boxfill8(sht_win->buf, sht_win->bxsize, cursor_c, cursor_x, 28, cursor_x + 7, 43);
@@ -217,7 +217,7 @@ void console_task(struct SHEET *sheet)
 	struct FIFO32 fifo;
 	struct TIMER *timer;
 	struct TASK *task = task_now();
-	int i, fifobuf[128],cursor_x=8,cursor_c=COL8_000000;
+	int i, fifobuf[128], cursor_x = 8, cursor_c = COL8_000000;
 
 	fifo32_init(&fifo, 128, fifobuf, 0);
 	timer = timer_alloc();
