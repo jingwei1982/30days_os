@@ -1,0 +1,746 @@
+Archive member included to satisfy reference by file (symbol)
+
+/usr/lib32/libc_nonshared.a(stack_chk_fail_local.oS)
+                              kernel/file.o (__stack_chk_fail_local)
+
+Merging program properties
+
+Removed property 0xc0000002 to merge kernel/mtask.o (0x3) and kernel/naskfunc.o (not found)
+Removed property 0xc0000002 to merge kernel/mtask.o (not found) and kernel/graphic.o (0x3)
+Removed property 0xc0000002 to merge kernel/mtask.o (not found) and kernel/sheet.o (0x3)
+Removed property 0xc0000002 to merge kernel/mtask.o (not found) and kernel/file.o (0x3)
+Removed property 0xc0000002 to merge kernel/mtask.o (not found) and kernel/console.o (0x3)
+Removed property 0xc0000002 to merge kernel/mtask.o (not found) and kernel/mouse.o (0x3)
+Removed property 0xc0000002 to merge kernel/mtask.o (not found) and kernel/int.o (0x3)
+Removed property 0xc0000002 to merge kernel/mtask.o (not found) and kernel/memory.o (0x3)
+Removed property 0xc0000002 to merge kernel/mtask.o (not found) and kernel/bootpack.o (0x3)
+Removed property 0xc0000002 to merge kernel/mtask.o (not found) and kernel/keyboard.o (0x3)
+Removed property 0xc0000002 to merge kernel/mtask.o (not found) and kernel/tool.o (0x3)
+Removed property 0xc0000002 to merge kernel/mtask.o (not found) and kernel/fifo.o (0x3)
+Removed property 0xc0000002 to merge kernel/mtask.o (not found) and kernel/dsctbl.o (0x3)
+Removed property 0xc0000002 to merge kernel/mtask.o (not found) and kernel/timer.o (0x3)
+Removed property 0xc0000002 to merge kernel/mtask.o (not found) and /usr/lib32/libc_nonshared.a(stack_chk_fail_local.oS) (0x3)
+
+Allocating common symbols
+Common symbol       size              file
+
+mousefifo           0x4               kernel/mtask.o
+timerctl            0x271c            kernel/mtask.o
+mousedata0          0x4               kernel/mouse.o
+taskctl             0x4               kernel/mtask.o
+keydata0            0x4               kernel/keyboard.o
+task_timer          0x4               kernel/mtask.o
+keyfifo             0x4               kernel/mtask.o
+
+Discarded input sections
+
+ .stab          0x0000000000000000      0x8b8 kernel/naskfunc.o
+ .stabstr       0x0000000000000000       0x15 kernel/naskfunc.o
+ .group         0x0000000000000000        0x8 kernel/mtask.o
+ .group         0x0000000000000000        0x8 kernel/mtask.o
+ .note.GNU-stack
+                0x0000000000000000        0x0 kernel/mtask.o
+ .note.gnu.property
+                0x0000000000000000       0x1c kernel/mtask.o
+ .group         0x0000000000000000        0x8 kernel/graphic.o
+ .group         0x0000000000000000        0x8 kernel/graphic.o
+ .text.__x86.get_pc_thunk.ax
+                0x0000000000000000        0x4 kernel/graphic.o
+ .text.__x86.get_pc_thunk.bx
+                0x0000000000000000        0x4 kernel/graphic.o
+ .note.GNU-stack
+                0x0000000000000000        0x0 kernel/graphic.o
+ .note.gnu.property
+                0x0000000000000000       0x1c kernel/graphic.o
+ .group         0x0000000000000000        0x8 kernel/sheet.o
+ .group         0x0000000000000000        0x8 kernel/sheet.o
+ .text.__x86.get_pc_thunk.ax
+                0x0000000000000000        0x4 kernel/sheet.o
+ .text.__x86.get_pc_thunk.bx
+                0x0000000000000000        0x4 kernel/sheet.o
+ .note.GNU-stack
+                0x0000000000000000        0x0 kernel/sheet.o
+ .note.gnu.property
+                0x0000000000000000       0x1c kernel/sheet.o
+ .group         0x0000000000000000        0x8 kernel/file.o
+ .text.__x86.get_pc_thunk.ax
+                0x0000000000000000        0x4 kernel/file.o
+ .note.GNU-stack
+                0x0000000000000000        0x0 kernel/file.o
+ .note.gnu.property
+                0x0000000000000000       0x1c kernel/file.o
+ .group         0x0000000000000000        0x8 kernel/console.o
+ .group         0x0000000000000000        0x8 kernel/console.o
+ .text.__x86.get_pc_thunk.ax
+                0x0000000000000000        0x4 kernel/console.o
+ .text.__x86.get_pc_thunk.bx
+                0x0000000000000000        0x4 kernel/console.o
+ .note.GNU-stack
+                0x0000000000000000        0x0 kernel/console.o
+ .note.gnu.property
+                0x0000000000000000       0x1c kernel/console.o
+ .group         0x0000000000000000        0x8 kernel/mouse.o
+ .group         0x0000000000000000        0x8 kernel/mouse.o
+ .text.__x86.get_pc_thunk.ax
+                0x0000000000000000        0x4 kernel/mouse.o
+ .text.__x86.get_pc_thunk.bx
+                0x0000000000000000        0x4 kernel/mouse.o
+ .note.GNU-stack
+                0x0000000000000000        0x0 kernel/mouse.o
+ .note.gnu.property
+                0x0000000000000000       0x1c kernel/mouse.o
+ .group         0x0000000000000000        0x8 kernel/int.o
+ .group         0x0000000000000000        0x8 kernel/int.o
+ .text.__x86.get_pc_thunk.ax
+                0x0000000000000000        0x4 kernel/int.o
+ .text.__x86.get_pc_thunk.bx
+                0x0000000000000000        0x4 kernel/int.o
+ .note.GNU-stack
+                0x0000000000000000        0x0 kernel/int.o
+ .note.gnu.property
+                0x0000000000000000       0x1c kernel/int.o
+ .group         0x0000000000000000        0x8 kernel/memory.o
+ .text.__x86.get_pc_thunk.ax
+                0x0000000000000000        0x4 kernel/memory.o
+ .note.GNU-stack
+                0x0000000000000000        0x0 kernel/memory.o
+ .note.gnu.property
+                0x0000000000000000       0x1c kernel/memory.o
+ .group         0x0000000000000000        0x8 kernel/bootpack.o
+ .text.__x86.get_pc_thunk.bx
+                0x0000000000000000        0x4 kernel/bootpack.o
+ .note.GNU-stack
+                0x0000000000000000        0x0 kernel/bootpack.o
+ .note.gnu.property
+                0x0000000000000000       0x1c kernel/bootpack.o
+ .group         0x0000000000000000        0x8 kernel/keyboard.o
+ .text.__x86.get_pc_thunk.bx
+                0x0000000000000000        0x4 kernel/keyboard.o
+ .note.GNU-stack
+                0x0000000000000000        0x0 kernel/keyboard.o
+ .note.gnu.property
+                0x0000000000000000       0x1c kernel/keyboard.o
+ .group         0x0000000000000000        0x8 kernel/tool.o
+ .group         0x0000000000000000        0x8 kernel/tool.o
+ .group         0x0000000000000000        0x8 kernel/tool.o
+ .text.__x86.get_pc_thunk.ax
+                0x0000000000000000        0x4 kernel/tool.o
+ .text.__x86.get_pc_thunk.bx
+                0x0000000000000000        0x4 kernel/tool.o
+ .note.GNU-stack
+                0x0000000000000000        0x0 kernel/tool.o
+ .note.gnu.property
+                0x0000000000000000       0x1c kernel/tool.o
+ .group         0x0000000000000000        0x8 kernel/fifo.o
+ .text.__x86.get_pc_thunk.ax
+                0x0000000000000000        0x4 kernel/fifo.o
+ .note.GNU-stack
+                0x0000000000000000        0x0 kernel/fifo.o
+ .note.gnu.property
+                0x0000000000000000       0x1c kernel/fifo.o
+ .group         0x0000000000000000        0x8 kernel/dsctbl.o
+ .group         0x0000000000000000        0x8 kernel/dsctbl.o
+ .text.__x86.get_pc_thunk.ax
+                0x0000000000000000        0x4 kernel/dsctbl.o
+ .text.__x86.get_pc_thunk.bx
+                0x0000000000000000        0x4 kernel/dsctbl.o
+ .note.GNU-stack
+                0x0000000000000000        0x0 kernel/dsctbl.o
+ .note.gnu.property
+                0x0000000000000000       0x1c kernel/dsctbl.o
+ .group         0x0000000000000000        0x8 kernel/timer.o
+ .group         0x0000000000000000        0x8 kernel/timer.o
+ .group         0x0000000000000000        0x8 kernel/timer.o
+ .text.__x86.get_pc_thunk.ax
+                0x0000000000000000        0x4 kernel/timer.o
+ .text.__x86.get_pc_thunk.bx
+                0x0000000000000000        0x4 kernel/timer.o
+ .note.GNU-stack
+                0x0000000000000000        0x0 kernel/timer.o
+ .note.gnu.property
+                0x0000000000000000       0x1c kernel/timer.o
+ .group         0x0000000000000000        0x8 /usr/lib32/libc_nonshared.a(stack_chk_fail_local.oS)
+ .text.__x86.get_pc_thunk.bx
+                0x0000000000000000        0x4 /usr/lib32/libc_nonshared.a(stack_chk_fail_local.oS)
+ .note.GNU-stack
+                0x0000000000000000        0x0 /usr/lib32/libc_nonshared.a(stack_chk_fail_local.oS)
+ .note.gnu.property
+                0x0000000000000000       0x1c /usr/lib32/libc_nonshared.a(stack_chk_fail_local.oS)
+
+Memory Configuration
+
+Name             Origin             Length             Attributes
+*default*        0x0000000000000000 0xffffffffffffffff
+
+Linker script and memory map
+
+Address of section .text set to 0x30400
+LOAD kernel/naskfunc.o
+LOAD kernel/mtask.o
+LOAD kernel/graphic.o
+LOAD kernel/sheet.o
+LOAD kernel/file.o
+LOAD kernel/console.o
+LOAD kernel/mouse.o
+LOAD kernel/int.o
+LOAD kernel/memory.o
+LOAD kernel/bootpack.o
+LOAD kernel/keyboard.o
+LOAD kernel/tool.o
+LOAD kernel/fifo.o
+LOAD kernel/dsctbl.o
+LOAD kernel/timer.o
+LOAD /lib32/libc.so
+START GROUP
+LOAD /lib32/libc.so.6
+LOAD /usr/lib32/libc_nonshared.a
+LOAD /lib32/ld-linux.so.2
+END GROUP
+                [!provide]                        PROVIDE (__executable_start = SEGMENT_START ("text-segment", 0x8048000))
+                0x0000000008048194                . = (SEGMENT_START ("text-segment", 0x8048000) + SIZEOF_HEADERS)
+
+.interp         0x0000000008048194       0x13
+ *(.interp)
+ .interp        0x0000000008048194       0x13 kernel/naskfunc.o
+
+.note.gnu.build-id
+ *(.note.gnu.build-id)
+
+.hash           0x00000000080481a8       0x30
+ *(.hash)
+ .hash          0x00000000080481a8       0x30 kernel/naskfunc.o
+
+.gnu.hash       0x00000000080481d8       0x30
+ *(.gnu.hash)
+ .gnu.hash      0x00000000080481d8       0x30 kernel/naskfunc.o
+
+.dynsym         0x0000000008048208       0x70
+ *(.dynsym)
+ .dynsym        0x0000000008048208       0x70 kernel/naskfunc.o
+
+.dynstr         0x0000000008048278       0x50
+ *(.dynstr)
+ .dynstr        0x0000000008048278       0x50 kernel/naskfunc.o
+
+.gnu.version    0x00000000080482c8        0xe
+ *(.gnu.version)
+ .gnu.version   0x00000000080482c8        0xe kernel/naskfunc.o
+
+.gnu.version_d  0x00000000080482d8        0x0
+ *(.gnu.version_d)
+ .gnu.version_d
+                0x00000000080482d8        0x0 kernel/naskfunc.o
+
+.gnu.version_r  0x00000000080482d8       0x30
+ *(.gnu.version_r)
+ .gnu.version_r
+                0x00000000080482d8       0x30 kernel/naskfunc.o
+
+.rel.dyn        0x0000000008048308        0x0
+ *(.rel.init)
+ *(.rel.text .rel.text.* .rel.gnu.linkonce.t.*)
+ .rel.text      0x0000000008048308        0x0 kernel/naskfunc.o
+ *(.rel.fini)
+ *(.rel.rodata .rel.rodata.* .rel.gnu.linkonce.r.*)
+ *(.rel.data.rel.ro .rel.data.rel.ro.* .rel.gnu.linkonce.d.rel.ro.*)
+ .rel.data.rel.ro
+                0x0000000008048308        0x0 kernel/naskfunc.o
+ *(.rel.data .rel.data.* .rel.gnu.linkonce.d.*)
+ *(.rel.tdata .rel.tdata.* .rel.gnu.linkonce.td.*)
+ *(.rel.tbss .rel.tbss.* .rel.gnu.linkonce.tb.*)
+ *(.rel.ctors)
+ *(.rel.dtors)
+ *(.rel.got)
+ .rel.got       0x0000000008048308        0x0 kernel/naskfunc.o
+ *(.rel.bss .rel.bss.* .rel.gnu.linkonce.b.*)
+ .rel.bss       0x0000000008048308        0x0 kernel/naskfunc.o
+ *(.rel.ifunc)
+
+.rel.plt        0x0000000008048308       0x10
+ *(.rel.plt)
+ .rel.plt       0x0000000008048308       0x10 kernel/naskfunc.o
+                [!provide]                        PROVIDE (__rel_iplt_start = .)
+ *(.rel.iplt)
+ .rel.iplt      0x0000000008048318        0x0 kernel/naskfunc.o
+                [!provide]                        PROVIDE (__rel_iplt_end = .)
+                0x0000000008049000                . = ALIGN (CONSTANT (MAXPAGESIZE))
+
+.init
+ *(SORT_NONE(.init))
+
+.plt            0x0000000008049000       0x30
+ *(.plt)
+ .plt           0x0000000008049000       0x30 kernel/naskfunc.o
+                0x0000000008049010                __stack_chk_fail@@GLIBC_2.4
+                0x0000000008049020                strnlen@@GLIBC_2.0
+ *(.iplt)
+ .iplt          0x0000000008049030        0x0 kernel/naskfunc.o
+
+.plt.got        0x0000000008049030        0x0
+ *(.plt.got)
+ .plt.got       0x0000000008049030        0x0 kernel/naskfunc.o
+
+.plt.sec
+ *(.plt.sec)
+
+.text           0x0000000000030400     0x57a8
+ *(.text.unlikely .text.*_unlikely .text.unlikely.*)
+ *(.text.exit .text.exit.*)
+ *(.text.startup .text.startup.*)
+ *(.text.hot .text.hot.*)
+ *(SORT_BY_NAME(.text.sorted.*))
+ *(.text .stub .text.* .gnu.linkonce.t.*)
+ .text          0x0000000000030400      0x160 kernel/naskfunc.o
+                0x0000000000030400                _start
+                0x0000000000030405                io_hlt
+                0x0000000000030407                io_cli
+                0x0000000000030409                io_sti
+                0x000000000003040b                io_stihlt
+                0x000000000003040e                io_in8
+                0x000000000003041c                io_in16
+                0x000000000003042b                io_in32
+                0x0000000000030434                io_out8
+                0x0000000000030440                io_out16
+                0x000000000003044d                io_out32
+                0x0000000000030459                io_load_eflags
+                0x000000000003045c                io_store_eflags
+                0x0000000000030466                load_gdtr
+                0x0000000000030477                load_idtr
+                0x000000000003048b                load_tr
+                0x0000000000030491                farjmp
+                0x0000000000030496                write_mem8
+                0x00000000000304a3                asm_inthandler20
+                0x00000000000304ba                asm_inthandler21
+                0x00000000000304d1                asm_inthandler27
+                0x00000000000304e8                asm_inthandler2c
+                0x00000000000304ff                memtest
+                0x0000000000030541                asm_cons_putchar
+                0x000000000003055b                farcall
+ .text          0x0000000000030560      0x71b kernel/mtask.o
+                0x0000000000030560                task_init
+                0x000000000003078b                task_alloc
+                0x00000000000308af                task_run
+                0x000000000003093b                task_switch
+                0x0000000000030a2d                task_sleep
+                0x0000000000030a93                task_now
+                0x0000000000030ad6                task_add
+                0x0000000000030b2f                task_remove
+                0x0000000000030bfc                task_switchsub
+                0x0000000000030c5e                task_idle
+ .text.__x86.get_pc_thunk.ax
+                0x0000000000030c7b        0x4 kernel/mtask.o
+                0x0000000000030c7b                __x86.get_pc_thunk.ax
+ .text.__x86.get_pc_thunk.bx
+                0x0000000000030c7f        0x4 kernel/mtask.o
+                0x0000000000030c7f                __x86.get_pc_thunk.bx
+ .text          0x0000000000030c83      0xb5e kernel/graphic.o
+                0x0000000000030c83                init_palette
+                0x0000000000030cb0                set_palette
+                0x0000000000030d6f                boxfill8
+                0x0000000000030dcf                putfont8
+                0x0000000000030edf                init_screen
+                0x000000000003110a                putfonts8_asc
+                0x0000000000031170                init_mouse_cursor8
+                0x000000000003125a                putblock8_8
+                0x00000000000312d7                make_window8
+                0x000000000003143c                make_wtitle8
+                0x0000000000031542                putfonts8_asc_sht
+                0x00000000000315ef                make_textbox8
+ .text          0x00000000000317e1      0xac6 kernel/sheet.o
+                0x00000000000317e1                shtctl_init
+                0x00000000000318d7                sheet_alloc
+                0x000000000003195c                sheet_setbuf
+                0x0000000000031993                sheet_updown
+                0x0000000000031d2a                sheet_refresh
+                0x0000000000031dac                sheet_refreshsub
+                0x0000000000031f89                sheet_refreshmap
+                0x000000000003214b                sheet_slide
+                0x000000000003226c                sheet_free
+ .text          0x00000000000322a7      0x31c kernel/file.o
+                0x00000000000322a7                file_readfat
+                0x0000000000032365                file_loadfile
+                0x000000000003241b                file_search
+ .text          0x00000000000325c3      0xf38 kernel/console.o
+                0x00000000000325c3                console_task
+                0x0000000000032a0e                cons_putchar
+                0x0000000000032b4e                cons_newline
+                0x0000000000032c6a                cons_runcmd
+                0x0000000000032dbd                cmd_mem
+                0x0000000000032eb9                cmd_cls
+                0x0000000000032f4b                cmd_dir
+                0x00000000000330d6                cmd_type
+                0x00000000000331fb                cmd_hlt
+                0x0000000000033325                cmd_app
+ .text          0x00000000000334fb      0x226 kernel/mouse.o
+                0x00000000000334fb                enable_mouse
+                0x0000000000033562                mouse_decode
+                0x00000000000336af                inthandler2c
+ .text          0x0000000000033721      0x11a kernel/int.o
+                0x0000000000033721                init_pic
+                0x000000000003380f                inthandler27
+ .text          0x000000000003383b      0x44e kernel/memory.o
+                0x000000000003383b                memman_init
+                0x0000000000033876                memman_total
+                0x00000000000338bd                memman_alloc
+                0x00000000000339b4                memman_free
+                0x0000000000033c12                memman_alloc_4k
+                0x0000000000033c4c                memman_free_4k
+ .text          0x0000000000033c89      0xe1a kernel/bootpack.o
+                0x0000000000033c89                HariMain
+ .text          0x0000000000034aa3       0xf0 kernel/keyboard.o
+                0x0000000000034aa3                wait_KBC_sendready
+                0x0000000000034ad9                init_keyboard
+                0x0000000000034b33                inthandler21
+ .text          0x0000000000034b93      0x86f kernel/tool.o
+                0x0000000000034e86                vsprintf
+                0x00000000000352d7                sprintf
+                0x0000000000035336                strcmp
+                0x000000000003539c                strncmp
+ .text.__x86.get_pc_thunk.cx
+                0x0000000000035402        0x4 kernel/tool.o
+                0x0000000000035402                __x86.get_pc_thunk.cx
+ .text          0x0000000000035406      0x1b6 kernel/fifo.o
+                0x0000000000035406                fifo32_init
+                0x000000000003545b                fifo32_put
+                0x000000000003551c                fifo32_get
+                0x0000000000035599                fifo32_status
+ .text          0x00000000000355bc      0x26d kernel/dsctbl.o
+                0x00000000000355bc                init_gdtidt
+                0x000000000003574d                set_segmdesc
+                0x00000000000357d6                set_gatedesc
+ .text          0x0000000000035829      0x35e kernel/timer.o
+                0x0000000000035829                init_pit
+                0x00000000000358f3                timer_alloc
+                0x0000000000035980                timer_free
+                0x000000000003599e                timer_init
+                0x00000000000359ce                timer_settime
+                0x0000000000035a9e                inthandler20
+ .text.__x86.get_pc_thunk.dx
+                0x0000000000035b87        0x4 kernel/timer.o
+                0x0000000000035b87                __x86.get_pc_thunk.dx
+ *fill*         0x0000000000035b8b        0x5 
+ .text          0x0000000000035b90       0x18 /usr/lib32/libc_nonshared.a(stack_chk_fail_local.oS)
+                0x0000000000035b90                __stack_chk_fail_local
+ *(.gnu.warning)
+
+.fini
+ *(SORT_NONE(.fini))
+                [!provide]                        PROVIDE (__etext = .)
+                [!provide]                        PROVIDE (_etext = .)
+                [!provide]                        PROVIDE (etext = .)
+                0x0000000000036000                . = ALIGN (CONSTANT (MAXPAGESIZE))
+                0x0000000000036000                . = SEGMENT_START ("rodata-segment", (ALIGN (CONSTANT (MAXPAGESIZE)) + (. & (CONSTANT (MAXPAGESIZE) - 0x1))))
+
+.rodata         0x0000000000036000      0x228
+ *(.rodata .rodata.* .gnu.linkonce.r.*)
+ .rodata        0x0000000000036000       0x71 kernel/console.o
+ .rodata        0x0000000000036071       0x11 kernel/bootpack.o
+ *fill*         0x0000000000036082        0x2 
+ .rodata        0x0000000000036084      0x1a4 kernel/tool.o
+
+.rodata1
+ *(.rodata1)
+
+.eh_frame_hdr
+ *(.eh_frame_hdr)
+ *(.eh_frame_entry .eh_frame_entry.*)
+
+.eh_frame       0x0000000000036228      0xb70
+ *(.eh_frame)
+ .eh_frame      0x0000000000036228       0x3c kernel/naskfunc.o
+                                         0x40 (size before relaxing)
+ .eh_frame      0x0000000000036264        0x0 kernel/naskfunc.o
+ .eh_frame      0x0000000000036264      0x174 kernel/mtask.o
+                                        0x18c (size before relaxing)
+ .eh_frame      0x00000000000363d8      0x1b0 kernel/graphic.o
+                                        0x1f0 (size before relaxing)
+ .eh_frame      0x0000000000036588      0x148 kernel/sheet.o
+                                        0x188 (size before relaxing)
+ .eh_frame      0x00000000000366d0       0x60 kernel/file.o
+                                         0x8c (size before relaxing)
+ .eh_frame      0x0000000000036730      0x174 kernel/console.o
+                                        0x1b4 (size before relaxing)
+ .eh_frame      0x00000000000368a4       0x68 kernel/mouse.o
+                                         0xa8 (size before relaxing)
+ .eh_frame      0x000000000003690c       0x48 kernel/int.o
+                                         0x88 (size before relaxing)
+ .eh_frame      0x0000000000036954       0xcc kernel/memory.o
+                                         0xf8 (size before relaxing)
+ .eh_frame      0x0000000000036a20       0x20 kernel/bootpack.o
+                                         0x4c (size before relaxing)
+ .eh_frame      0x0000000000036a40       0x6c kernel/keyboard.o
+                                         0x98 (size before relaxing)
+ .eh_frame      0x0000000000036aac      0x104 kernel/tool.o
+                                        0x144 (size before relaxing)
+ .eh_frame      0x0000000000036bb0       0x84 kernel/fifo.o
+                                         0xb0 (size before relaxing)
+ .eh_frame      0x0000000000036c34       0x64 kernel/dsctbl.o
+                                         0xa4 (size before relaxing)
+ .eh_frame      0x0000000000036c98       0xe4 kernel/timer.o
+                                        0x124 (size before relaxing)
+ .eh_frame      0x0000000000036d7c       0x1c /usr/lib32/libc_nonshared.a(stack_chk_fail_local.oS)
+                                         0x48 (size before relaxing)
+ *(.eh_frame.*)
+
+.gcc_except_table
+ *(.gcc_except_table .gcc_except_table.*)
+
+.gnu_extab
+ *(.gnu_extab*)
+
+.exception_ranges
+ *(.exception_ranges*)
+                0x0000000000037f58                . = DATA_SEGMENT_ALIGN (CONSTANT (MAXPAGESIZE), CONSTANT (COMMONPAGESIZE))
+
+.eh_frame
+ *(.eh_frame)
+ *(.eh_frame.*)
+
+.gnu_extab
+ *(.gnu_extab)
+
+.gcc_except_table
+ *(.gcc_except_table .gcc_except_table.*)
+
+.exception_ranges
+ *(.exception_ranges*)
+
+.tdata          0x0000000000037f58        0x0
+                [!provide]                        PROVIDE (__tdata_start = .)
+ *(.tdata .tdata.* .gnu.linkonce.td.*)
+
+.tbss
+ *(.tbss .tbss.* .gnu.linkonce.tb.*)
+ *(.tcommon)
+
+.preinit_array  0x0000000000037f58        0x0
+                [!provide]                        PROVIDE (__preinit_array_start = .)
+ *(.preinit_array)
+                [!provide]                        PROVIDE (__preinit_array_end = .)
+
+.init_array     0x0000000000037f58        0x0
+                [!provide]                        PROVIDE (__init_array_start = .)
+ *(SORT_BY_INIT_PRIORITY(.init_array.*) SORT_BY_INIT_PRIORITY(.ctors.*))
+ *(.init_array EXCLUDE_FILE(*crtend?.o *crtend.o *crtbegin?.o *crtbegin.o) .ctors)
+                [!provide]                        PROVIDE (__init_array_end = .)
+
+.fini_array     0x0000000000037f58        0x0
+                [!provide]                        PROVIDE (__fini_array_start = .)
+ *(SORT_BY_INIT_PRIORITY(.fini_array.*) SORT_BY_INIT_PRIORITY(.dtors.*))
+ *(.fini_array EXCLUDE_FILE(*crtend?.o *crtend.o *crtbegin?.o *crtbegin.o) .dtors)
+                [!provide]                        PROVIDE (__fini_array_end = .)
+
+.ctors
+ *crtbegin.o(.ctors)
+ *crtbegin?.o(.ctors)
+ *(EXCLUDE_FILE(*crtend?.o *crtend.o) .ctors)
+ *(SORT_BY_NAME(.ctors.*))
+ *(.ctors)
+
+.dtors
+ *crtbegin.o(.dtors)
+ *crtbegin?.o(.dtors)
+ *(EXCLUDE_FILE(*crtend?.o *crtend.o) .dtors)
+ *(SORT_BY_NAME(.dtors.*))
+ *(.dtors)
+
+.jcr
+ *(.jcr)
+
+.data.rel.ro    0x0000000000037f58        0x0
+ *(.data.rel.ro.local* .gnu.linkonce.d.rel.ro.local.*)
+ *(.data.rel.ro .data.rel.ro.* .gnu.linkonce.d.rel.ro.*)
+ .data.rel.ro   0x0000000000037f58        0x0 kernel/naskfunc.o
+
+.dynamic        0x0000000000037f58       0xa8
+ *(.dynamic)
+ .dynamic       0x0000000000037f58       0xa8 kernel/naskfunc.o
+                0x0000000000037f58                _DYNAMIC
+
+.got            0x0000000000038000        0x0
+ *(.got)
+ .got           0x0000000000038000        0x0 kernel/naskfunc.o
+ *(.igot)
+                0x0000000000038ff4                . = DATA_SEGMENT_RELRO_END (., (SIZEOF (.got.plt) >= 0xc)?0xc:0x0)
+
+.got.plt        0x0000000000038000       0x14
+ *(.got.plt)
+ .got.plt       0x0000000000038000       0x14 kernel/naskfunc.o
+                0x0000000000038000                _GLOBAL_OFFSET_TABLE_
+ *(.igot.plt)
+ .igot.plt      0x0000000000038014        0x0 kernel/naskfunc.o
+
+.data           0x0000000000038020     0x1b20
+ *(.data .data.* .gnu.linkonce.d.*)
+ .data          0x0000000000038020      0x800 kernel/naskfunc.o
+ .data          0x0000000000038820        0x0 kernel/mtask.o
+ .data          0x0000000000038820     0x1220 kernel/graphic.o
+ .data          0x0000000000039a40        0x0 kernel/sheet.o
+ .data          0x0000000000039a40        0x0 kernel/file.o
+ .data          0x0000000000039a40        0x0 kernel/console.o
+ .data          0x0000000000039a40        0x0 kernel/mouse.o
+ .data          0x0000000000039a40        0x0 kernel/int.o
+ .data          0x0000000000039a40        0x0 kernel/memory.o
+ .data          0x0000000000039a40      0x100 kernel/bootpack.o
+ .data          0x0000000000039b40        0x0 kernel/keyboard.o
+ .data          0x0000000000039b40        0x0 kernel/tool.o
+ .data          0x0000000000039b40        0x0 kernel/fifo.o
+ .data          0x0000000000039b40        0x0 kernel/dsctbl.o
+ .data          0x0000000000039b40        0x0 kernel/timer.o
+ .data          0x0000000000039b40        0x0 /usr/lib32/libc_nonshared.a(stack_chk_fail_local.oS)
+
+.data1
+ *(.data1)
+                0x0000000000039b40                _edata = .
+                [!provide]                        PROVIDE (edata = .)
+                0x0000000000039b40                . = .
+                0x0000000000039b40                __bss_start = .
+
+.bss            0x0000000000039b40     0x2750
+ *(.dynbss)
+ .dynbss        0x0000000000039b40        0x0 kernel/naskfunc.o
+ *(.bss .bss.* .gnu.linkonce.b.*)
+ .bss           0x0000000000039b40        0x0 kernel/mtask.o
+ .bss           0x0000000000039b40        0x0 kernel/graphic.o
+ .bss           0x0000000000039b40        0x0 kernel/sheet.o
+ .bss           0x0000000000039b40        0x0 kernel/file.o
+ .bss           0x0000000000039b40        0x0 kernel/console.o
+ .bss           0x0000000000039b40        0x0 kernel/mouse.o
+ .bss           0x0000000000039b40        0x0 kernel/int.o
+ .bss           0x0000000000039b40        0x0 kernel/memory.o
+ .bss           0x0000000000039b40        0x0 kernel/bootpack.o
+ .bss           0x0000000000039b40        0x0 kernel/keyboard.o
+ .bss           0x0000000000039b40        0x0 kernel/tool.o
+ .bss           0x0000000000039b40        0x0 kernel/fifo.o
+ .bss           0x0000000000039b40        0x0 kernel/dsctbl.o
+ .bss           0x0000000000039b40        0x0 kernel/timer.o
+ .bss           0x0000000000039b40        0x0 /usr/lib32/libc_nonshared.a(stack_chk_fail_local.oS)
+ *(COMMON)
+ COMMON         0x0000000000039b40     0x2748 kernel/mtask.o
+                0x0000000000039b40                mousefifo
+                0x0000000000039b60                timerctl
+                0x000000000003c27c                taskctl
+                0x000000000003c280                task_timer
+                0x000000000003c284                keyfifo
+ COMMON         0x000000000003c288        0x4 kernel/mouse.o
+                0x000000000003c288                mousedata0
+ COMMON         0x000000000003c28c        0x4 kernel/keyboard.o
+                0x000000000003c28c                keydata0
+                0x000000000003c290                . = ALIGN ((. != 0x0)?0x4:0x1)
+                0x000000000003c290                . = ALIGN (0x4)
+                0x000000000003c290                . = SEGMENT_START ("ldata-segment", .)
+                0x000000000003c290                . = ALIGN (0x4)
+                0x000000000003c290                _end = .
+                [!provide]                        PROVIDE (end = .)
+                0x000000000003c290                . = DATA_SEGMENT_END (.)
+
+.stab
+ *(.stab)
+
+.stabstr
+ *(.stabstr)
+
+.stab.excl
+ *(.stab.excl)
+
+.stab.exclstr
+ *(.stab.exclstr)
+
+.stab.index
+ *(.stab.index)
+
+.stab.indexstr
+ *(.stab.indexstr)
+
+.comment        0x0000000000000000       0x29
+ *(.comment)
+ .comment       0x0000000000000000       0x29 kernel/mtask.o
+                                         0x2a (size before relaxing)
+ .comment       0x0000000000000029       0x2a kernel/graphic.o
+ .comment       0x0000000000000029       0x2a kernel/sheet.o
+ .comment       0x0000000000000029       0x2a kernel/file.o
+ .comment       0x0000000000000029       0x2a kernel/console.o
+ .comment       0x0000000000000029       0x2a kernel/mouse.o
+ .comment       0x0000000000000029       0x2a kernel/int.o
+ .comment       0x0000000000000029       0x2a kernel/memory.o
+ .comment       0x0000000000000029       0x2a kernel/bootpack.o
+ .comment       0x0000000000000029       0x2a kernel/keyboard.o
+ .comment       0x0000000000000029       0x2a kernel/tool.o
+ .comment       0x0000000000000029       0x2a kernel/fifo.o
+ .comment       0x0000000000000029       0x2a kernel/dsctbl.o
+ .comment       0x0000000000000029       0x2a kernel/timer.o
+
+.gnu.build.attributes
+ *(.gnu.build.attributes .gnu.build.attributes.*)
+
+.debug
+ *(.debug)
+
+.line
+ *(.line)
+
+.debug_srcinfo
+ *(.debug_srcinfo)
+
+.debug_sfnames
+ *(.debug_sfnames)
+
+.debug_aranges
+ *(.debug_aranges)
+
+.debug_pubnames
+ *(.debug_pubnames)
+
+.debug_info
+ *(.debug_info .gnu.linkonce.wi.*)
+
+.debug_abbrev
+ *(.debug_abbrev)
+
+.debug_line
+ *(.debug_line .debug_line.* .debug_line_end)
+
+.debug_frame
+ *(.debug_frame)
+
+.debug_str
+ *(.debug_str)
+
+.debug_loc
+ *(.debug_loc)
+
+.debug_macinfo
+ *(.debug_macinfo)
+
+.debug_weaknames
+ *(.debug_weaknames)
+
+.debug_funcnames
+ *(.debug_funcnames)
+
+.debug_typenames
+ *(.debug_typenames)
+
+.debug_varnames
+ *(.debug_varnames)
+
+.debug_pubtypes
+ *(.debug_pubtypes)
+
+.debug_ranges
+ *(.debug_ranges)
+
+.debug_macro
+ *(.debug_macro)
+
+.debug_addr
+ *(.debug_addr)
+
+.gnu.attributes
+ *(.gnu.attributes)
+
+/DISCARD/
+ *(.note.GNU-stack)
+ *(.gnu_debuglink)
+ *(.gnu.lto_*)
+OUTPUT(haribote.bin elf32-i386)
