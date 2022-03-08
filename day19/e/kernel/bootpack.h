@@ -318,7 +318,7 @@ void task_idle(void);
 
 
 //file
-#define ADR_DISKIMG 0x70000
+#define ADR_DISKIMG 0x60000
 struct FILEINFO{
 	unsigned char name[8], ext[3], type;
 	char reserve[10];

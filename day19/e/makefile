@@ -17,21 +17,24 @@ c:=$(wildcard kernel/*.c)
 c_o=$(patsubst %.c,%.o,$(c))
 c_include=$(wildcard include/*.h)
 
+api:=$(wildcard api/*.asm)
+api_bin=$(patsubst %.asm,%.bin,$(api))
+
 ASMBFLAGS	= -I boot/include/
-CFLAGS		= -I include/ -c -m32
+CFLAGS		= -I include/ -c -m32 -fno-builtin
 
 kernel_bin=haribote.bin
 target=wmy.img
 bochs_conf=bochsrc.txt
 
-$(target):$(kernel_bin) $(bin_wo_elf) empty.img
+$(target):$(kernel_bin) $(bin_wo_elf) $(api_bin) empty.img
 	cp empty.img $(target)
 	dd if=$(boot_bin) of=$(target) bs=512 count=1 conv=notrunc
 	sudo mount $(target) /media/ -t vfat -o loop
-	sudo cp $(loader_bin) /media
-	sudo cp $(kernel_bin) /media
 	sudo cp makefile /media
 	sudo cp $(bochs_conf) /media
+	sudo cp $(loader_bin) /media
+	sudo cp $(kernel_bin) /media
 	sudo sync
 	@echo "Now the image include below files:"
 	ls -alh /media
@@ -45,6 +48,10 @@ $(bin_wo_elf):%.bin:%.asm $(boot_include)
 $(asms_o):%.o:%.asm
 	@echo "Start to generate the " $<
 	nasm -f elf -g -F stabs $< -o $@
+
+# $(api_bin):%.bin:%.asm
+# 	@echo "Start to generate the api " $<
+# 	nasm $< -o $@
 
 $(c_o):%.o:%.c $(c_include)
 	@echo "Dealing with "$<

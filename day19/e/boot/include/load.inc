@@ -9,7 +9,7 @@ OffsetOfKernelFile	equ	     0h	; KERNEL.BIN 被加载到的位置 ---- 偏移地
 
 BaseOfKernelFilePhyAddr	equ	BaseOfKernelFile * 10h
 
-BaseOfIplFile	equ 07000h;  IPL.BIN 被加载到的位置  ----段地址
+BaseOfIplFile	equ 06000h;  IPL.BIN 被加载到的位置  ----段地址
 OffsetOfIplFile	equ 0h 		; IPL.BIN 被加载到的位置 ----偏移地址
 
 KernelEntryPointPhyAddr	equ	030400h	; 注意：1、必须与 MAKEFILE 中参数 -Ttext 的值相等!!

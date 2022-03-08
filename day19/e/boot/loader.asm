@@ -96,15 +96,6 @@ keystatus:
 	; mov	dh, 0			; "Loading  "
 	; call	DispStrRealMode		; 显示字符串
 
-; 将软盘开始的33扇区放到内存中
-; copyipl:
-; 	mov ax,BaseOfIplFile
-; 	mov es,ax
-; 	mov bx,OffsetOfIplFile
-; 	mov ax,1
-; 	mov cl,33
-; 	call ReadSector
-
 	mov	ax, cs
 	mov	ds, ax
 	mov	es, ax
@@ -133,12 +124,30 @@ keystatus:
 	xor	dl, dl	; ┣ 软驱复位
 	int	13h	; ┛
 
+; 将软盘开始的33扇区放到内存中
+; copyipl:
+
 	mov ax, BaseOfIplFile
 	mov es,ax
 	mov bx, OffsetOfIplFile
 	mov ax,0
-	mov cl,33
+	mov cl, 0x40		;超过0x40就会出错，不知道原因。
 	call ReadSector
+
+	; mov bx,OffsetOfIplFile+0x40
+	; mov ax,0x40	
+	; mov cl,0x40 
+	; call ReadSector
+
+	; mov bx,OffsetOfIplFile+0x80
+	; mov ax,0x80	
+	; mov cl,0x40 
+	; call ReadSector
+
+	; mov bx,OffsetOfIplFile+0xC0
+	; mov ax,0xC0	
+	; mov cl,0x40 
+	; call ReadSector
 
 LABEL_SEARCH_IN_ROOT_DIR_BEGIN:
 	cmp	word [wRootDirSizeForLoop], 0	; ┓
@@ -317,7 +326,7 @@ ReadSector:
 	sub	esp, 2			; 辟出两个字节的堆栈区域保存要读的扇区数: byte [bp-2]
 
 	mov	byte [bp-2], cl
-	push	bx			; 保存 bx
+	push bx			; 保存 bx
 	mov	bl, [BPB_SecPerTrk]	; bl: 除数
 	div	bl			; y 在 al 中, z 在 ah 中
 	inc	ah			; z ++
@@ -326,7 +335,8 @@ ReadSector:
 	shr	al, 1			; y >> 1 (其实是 y/BPB_NumHeads, 这里BPB_NumHeads=2)
 	mov	ch, al			; ch <- 柱面号
 	and	dh, 1			; dh & 1 = 磁头号
-	pop	bx			; 恢复 bx
+	pop	bx			; 恢复 bx	
+	
 	; 至此, "柱面号, 起始扇区, 磁头号" 全部得到 ^^^^^^^^^^^^^^^^^^^^^^^^
 	mov	dl, [BS_DrvNum]		; 驱动器号 (0 表示 A 盘)
 .GoOnReading:
@@ -334,6 +344,7 @@ ReadSector:
 	mov	al, byte [bp-2]		; 读 al 个扇区
 	int	13h
 	jc	.GoOnReading		; 如果读取错误 CF 会被置为 1, 这时就不停地读, 直到正确为止
+
 
 	add	esp, 2
 	pop	bp
