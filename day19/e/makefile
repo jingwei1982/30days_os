@@ -32,6 +32,7 @@ $(target):$(kernel_bin) $(bin_wo_elf) $(api_bin) empty.img
 	dd if=$(boot_bin) of=$(target) bs=512 count=1 conv=notrunc
 	sudo mount $(target) /media/ -t vfat -o loop
 	sudo cp makefile /media
+	sudo cp $(api_bin) /media
 	sudo cp $(bochs_conf) /media
 	sudo cp $(loader_bin) /media
 	sudo cp $(kernel_bin) /media
@@ -49,9 +50,9 @@ $(asms_o):%.o:%.asm
 	@echo "Start to generate the " $<
 	nasm -f elf -g -F stabs $< -o $@
 
-# $(api_bin):%.bin:%.asm
-# 	@echo "Start to generate the api " $<
-# 	nasm $< -o $@
+$(api_bin):%.bin:%.asm
+	@echo "Start to generate the api " $<
+	nasm $< -o $@
 
 $(c_o):%.o:%.c $(c_include)
 	@echo "Dealing with "$<
@@ -85,4 +86,5 @@ clean:
 	-rm -rf ./boot/*.bin
 	-rm -rf ./kernel/*.o
 	-rm -rf ./kernel/*.bin
+	-rm -rf ./api/*.bin
 	@echo "Clean finished!"

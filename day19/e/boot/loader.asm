@@ -131,7 +131,9 @@ keystatus:
 	mov es,ax
 	mov bx, OffsetOfIplFile
 	mov ax,0
-	mov cl, 0x40		;超过0x40就会出错，不知道原因。
+	mov cl, 0x40		;超过0x40就会出错，
+						; CL = sector number 1-63 (bits 0-5)
+	     				; high two bits of cylinder (bits 6-7, hard disk only)
 	call ReadSector
 
 	; mov bx,OffsetOfIplFile+0x40
