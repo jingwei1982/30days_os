@@ -2,6 +2,10 @@ platfrom: ubuntu 20.04 LTS
 
 Tools: nasm, gcc, dd, bochs
 
+相对教程，最大的特点是不使用作者自己改写的编译器，而是使用常规的nasm和gcc/ld。我这里前20章用的都是64位的gcc， 21章开始自己编译了一个32位的cross toolchain, 能规避很多问题。链接如下，<https://wiki.osdev.org/GCC_Cross-Compiler#Why_cross-compilers_are_necessary>。 另外，kernel部分使用了elf格式，而api部分使用了 --oformat binary格式。
+
+另外，我想说一句，尽量不要在国内网站搜索，实在太垃圾了，在baidu一星期解决不了的问题，在gg可能10分钟就搞清楚了。
+
 Q: 如何运行？
 
 A: 在ubuntu环境中，进入目录后，执行make run可以看到在虚拟机中运行的效果。
@@ -10,9 +14,9 @@ Q:如何查看bin文件？
 
 A: xxd -a -u -g 1 xxx.bin或者hexdump -C xxx.bin
 
-Q：ubuntu中编译缺失stdio.h文件
+Q:如何查看obj文件？
 
-A:在64位操作系统中编译32位会显示此问题，可以通过以下解决。sudo apt-get install gcc-multilib
+A: objdump -d *.o
 
 
 相对课本，目录基本和教材保持已知，主要改动如下：
@@ -48,15 +52,16 @@ bootpack.c:(.text+0x6d): undefined reference to `sprintf'
 make: *** [makefile:41: haribote.bin] Error 1
 在day07a中解决此问题。
 
+day05f1：使用交叉编译器。
+
 day05i: 设置GDT/IDT.
 
 day06c: 调整目录架构。
 
 day06d: PIC, 调整目录后，c文件无法跳转到.h文件，添加.vscode来解决此问题。
-
 day06e: IDT设置卡了我好长时间，最终把dsctbl.c和loader.asm中GDT设置为一致后解决。
-
 day07a: 重写sprintf，现在可以正常打印变量。
+day07a1: 使用交叉编译。
 
 day07b: 移除int 06/08/0c. 修改了boxfill长度设置。
 
@@ -131,3 +136,19 @@ day19e: type修改，并且代码整理。为使用type，将开头的0x40个扇
 day20a: 整理后，dir输出size后有一个'。'.
 
 day20c: makefile添加.map文件生成。
+
+day20d:farjmp改为farcall
+
+day20e：day20d使用farcall,需要自己根据map填写地址，day20e将asm_puts_char注册为中断，不需要调整地址。
+
+day20f: makefile中添加make rerun和make reimage.
+
+day21a1: 从此处开始使用交叉编译。
+
+day21b: 将api.bin编程链接使用 --oformat binary模式，然后固定放在0x8000处。
+
+day21c: 每个api放在单独的文件夹中，api子文件夹下放置makefile, 以方便单独编译。调整了crack点的位置，和自己的root dir保持一致。
+
+day21d: 在asm中.开始的标签名，即便和其他函数中的标签重复，系统也能将他们区分开。
+
+day22b: 添加.lst和.map文件，分析对比数据出错位置。

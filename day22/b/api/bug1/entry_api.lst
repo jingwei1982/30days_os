@@ -1,0 +1,16 @@
+     1                                  extern HariMain;
+     2                                  [BITS 32]
+     3                                      global api_putchar,api_end
+     4                                  [section .text]
+     5 00000000 E8(00000000)                call HariMain;
+     6 00000005 CB                          retf
+     7                                      
+     8                                      api_putchar:    ;void api_putchar(int c);
+     9 00000006 BA01000000                      mov edx,1
+    10 0000000B 8A442404                        mov al,[esp+4]  ;c
+    11 0000000F CD40                            int 0x40 
+    12 00000011 C3                              ret
+    13                                  
+    14                                      api_end:    ;void api_end(void);
+    15 00000012 BA04000000                      mov edx,4
+    16 00000017 CD40                            int 0x40
