@@ -131,7 +131,7 @@ day18f: 在tools中添加了strcmp的实现.
 
 day18g: 将软盘中33个扇区放在0x60000处。
 
-day19e: type修改，并且代码整理。为使用type，将开头的0x40个扇区放在了0x60000处。添加应用程序，应用程序未使用elf.
+day19e: type修改，并且代码整理。为使用type，将开头的0x40个扇区放在了0x60000处。添加应用程序，应用程序未使用elf。这里只读取了前0x40个扇区，随着后续API的增加，可能会出现读取不足的情况，不过暂时先这样吧。
 
 day20a: 整理后，dir输出size后有一个'。'.
 
@@ -153,4 +153,11 @@ day21d: 在asm中.开始的标签名，即便和其他函数中的标签重复�
 
 day22b: 添加.lst和.map文件，分析对比数据出错位置。
 
-day22d: 调整kernel中asm文件，在c call 汇编时候，之前是push ebp, 现在去除了，没必要。另外，发现task_a的cursor不闪烁,这是由于cursor_c>=0被错误写成cursor_c>0导致只显示白的，不显示黑色。加了中断号打印，这个对debug是有很用的。
+day22d: 调整kernel中asm文件，在c call 汇编时候，之前是push ebp, 现在去除了，没必要。另外，发现task_a的cursor不闪烁,这是由于cursor_c>=0被错误写成cursor_c>0导致只显示白的，不显示黑色。加了中断号打印，这个对debug是有很用的。使用“find  .  -type f -regex  ".*\.\(o\|bin\|log\|map\)" |xargs rm -rf
+"移除了没必要的文件。
+
+day22e: 调整众多，因为和教材采用的是不同的编译方法，在edx=2/3中，把(char *)ebx+cs_base改为(char *)ebx, 也就是去除了cs_base，这是因为在编译时候指定了-Ttext=0x8000导致的。同时也把单asm编译方法做了改变，添加了-Ttext设置。hello2/3/4正常打印，hello会进入异常打印中，这个应该不是问题，是之前的保护操作系统导致的。
+
+day22f/g: 去除ds_base, 在我这里没用。
+
+day23/a: 纸娃娃系统winhelo2.hrb有7.6kb, 我这winhelo2.bin只有316B, 这个还是很有成就感的，哈哈哈。
