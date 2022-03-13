@@ -152,3 +152,5 @@ day21c: 每个api放在单独的文件夹中，api子文件夹下放置makefile,
 day21d: 在asm中.开始的标签名，即便和其他函数中的标签重复，系统也能将他们区分开。
 
 day22b: 添加.lst和.map文件，分析对比数据出错位置。
+
+day22d: 调整kernel中asm文件，在c call 汇编时候，之前是push ebp, 现在去除了，没必要。另外，发现task_a的cursor不闪烁,这是由于cursor_c>=0被错误写成cursor_c>0导致只显示白的，不显示黑色。加了中断号打印，这个对debug是有很用的。
