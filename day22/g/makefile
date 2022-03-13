@@ -92,6 +92,6 @@ rerun:
 .PHONY:clean
 clean:
 	@echo "Start to clean files."
-	-find . -type f -regex  ".*\.\(o\|bin\|map\|lst\|\log\)" | xargs rm -rf
+	-find . -type f -regex  ".*\.\(o\|bin\|map\|lst\|\log\|dump\)" | xargs rm -rf
 	-rm -rf $(target)
 	@echo "Clean finished!"
