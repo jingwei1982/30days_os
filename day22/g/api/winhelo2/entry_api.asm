@@ -7,6 +7,8 @@ extern HariMain;
     retf
 
     api_openwin:    ;int api_openwin(char *buf,int xsiz,int ysiz,int col_inv,char *title)
+		; edx=5; ebx=win buffer; esi=x size; edi=y size; eax=col_inv; ecx=windows' title.
+		; eax is the returned value, eax:sheet handler.
 		PUSH	EDI
 		PUSH	ESI
 		PUSH	EBX
@@ -28,7 +30,7 @@ extern HariMain;
         int 0x40
 
     api_putstr0:    ;void api_putstr0(char *s)
-        push ebx
+		push ebx
         mov edx,2
         mov ebx,[esp+8] ;s
         int 0x40
@@ -36,6 +38,7 @@ extern HariMain;
         ret
 
     api_putstrwin:	; void api_putstrwin(int win, int x, int y, int col, int len, char *str);
+		;edx=6;ebx=windows handler;esi=x; edi=y; eax=color; ecx=string's length; ebp=string
 		PUSH	EDI
 		PUSH	ESI
 		PUSH	EBP

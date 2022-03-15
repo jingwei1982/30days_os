@@ -66,7 +66,7 @@ $(c_o):%.o:%.c $(c_include)
 
 $(kernel_bin):$(asms_o) $(c_o)
 	@echo "Start to ld the kernel file."
-	i386-elf-ld -nostdlib -Ttext 0x030400 -s $(asms_o) $(c_o) -o $(kernel_bin)
+	i386-elf-ld -nostdlib -Map=kernel.map -Ttext 0x030400 -s $(asms_o) $(c_o) -o $(kernel_bin)
 
 run:$(target)
 	bochs -f $(bochs_conf)

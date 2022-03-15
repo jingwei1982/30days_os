@@ -412,6 +412,8 @@ int *hrb_api(int edi, int esi, int ebp, int esp, int ebx, int edx, int ecx, int 
 	}
 	else if (edx == 5)
 	{
+		// edx=5; ebx=win buffer; esi=x size; edi=y size; eax=col_inv; ecx=windows' title.
+		// eax is the returned value, eax:sheet handler.
 		sht = sheet_alloc(shtctl);
 		sheet_setbuf(sht, (char *)ebx + ds_base, esi, edi, eax);
 		make_window8((char *)ebx + ds_base, esi, edi, (char *)ecx + ds_base, 0);
@@ -421,14 +423,17 @@ int *hrb_api(int edi, int esi, int ebp, int esp, int ebx, int edx, int ecx, int 
 	}
 	else if (edx == 6)
 	{
+		// edx=6;ebx=windows handler;esi=x; edi=y; eax=color; ecx=string's length;
+		// ebp=string
 		sht = (struct SHEET *)ebx;
 		putfonts8_asc(sht->buf, sht->bxsize, esi, edi, eax, (char *)ebp);
 		sheet_refresh(sht, esi, edi, esi + ecx * 8, edi + 16);
 	}
 	else if (edx == 7)
 	{
+		// edx=7;ebx=windows handler;eax=x0; ecx=y0; esi=x1; edi=y1;
+		// ebp=color
 		sht = (struct SHEET *)ebx;
-
 		boxfill8(sht->buf, sht->bxsize, ebp, eax, ecx, esi, edi); // compared with the book, remove the "+ds_base"
 		sheet_refresh(sht, eax, ecx, esi + 1, edi + 1);
 	}
