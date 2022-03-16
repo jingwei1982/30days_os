@@ -16,7 +16,7 @@ A: xxd -a -u -g 1 xxx.bin或者hexdump -C xxx.bin
 
 Q:如何查看obj文件？
 
-A: objdump -d *.o
+A: objdump -M intel -d *.o;  -M intel使得结果按intel asm格式显示，否则是AT&T格式。
 
 
 相对课本，目录基本和教材保持已知，主要改动如下：
@@ -160,4 +160,5 @@ day22e: 调整众多，因为和教材采用的是不同的编译方法，在edx
 
 day22f/g: 去除ds_base, 在我这里没用。
 
-day23/a: 纸娃娃系统winhelo2.hrb有7.6kb, 我这winhelo2.bin只有316B, 这个还是很有成就感的，哈哈哈。
+day23/a: 纸娃娃系统winhelo2.hrb有7.6kb, 我这winhelo2.bin只有316B, 这个还是很有成就感的，哈哈哈。代码里面虽然添加了api_initmalloc/api_malloc/api_free,但是根本没有使用。这块代码应该也不适合我使用。。。
+
