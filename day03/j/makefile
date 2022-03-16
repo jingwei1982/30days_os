@@ -14,7 +14,7 @@ kernel_bin=haribote.bin
 target=wmy.img
 bochs_conf=bochsrc.txt
 
-$(target):$(kernel_bin) $(bin_wo_elf) empty.img
+$(target):$(kernel_bin) $(bin_wo_elf)  
 	dd if=/dev/zero of=$(target) bs=512 count=2880
 	dd if=$(boot_bin) of=$(target) bs=512 count=1 conv=notrunc
 	sudo mount $(target) /media/ -t vfat -o loop

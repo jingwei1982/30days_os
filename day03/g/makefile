@@ -4,7 +4,7 @@ boot_bin=ipl.bin
 target=wmy.img
 bochs_conf=bochsrc.txt
 
-$(target):$(asm_bin) empty.img
+$(target):$(asm_bin)  
 	dd if=/dev/zero of=$(target) bs=512 count=2880
 	dd if=$(boot_bin) of=$(target) bs=512 count=1 conv=notrunc
 	sudo mount $(target) /media/ -t vfat -o loop

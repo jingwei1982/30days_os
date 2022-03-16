@@ -35,7 +35,7 @@ sub_makefile:
 		echo "";\
 	done
 
-$(target):$(kernel_bin) $(bin_wo_elf) sub_makefile empty.img
+$(target):$(kernel_bin) $(bin_wo_elf) sub_makefile  
 	dd if=/dev/zero of=$(target) bs=512 count=2880
 	dd if=$(boot_bin) of=$(target) bs=512 count=1 conv=notrunc
 	sudo mount $(target) /media/ -t vfat -o loop
