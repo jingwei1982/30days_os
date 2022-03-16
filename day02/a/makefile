@@ -5,7 +5,7 @@ target=wmy.img
 bochs_conf=bochsrc.txt
 
 $(target):$(asm_bin) empty.img
-	cp empty.img $(target)
+	dd if=/dev/zero of=$(target) bs=512 count=2880
 	dd if=$(boot_bin) of=$(target) bs=512 count=1 conv=notrunc
 	@echo "Image created sucessfully! You can use make run to start the bochs!"
 
