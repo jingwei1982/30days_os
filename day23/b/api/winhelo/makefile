@@ -9,7 +9,7 @@ api_bin=$(patsubst %.c,%.bin,$(api_c))
 
 $(api_bin):$(api_asm_o) $(api_c_o)
 	@echo "Start to link the api "$@
-	i386-elf-ld -nostdlib -Map=$(patsubst %.c,%.map,$(api_c)) -Ttext 0x8000 --oformat binary -s $(api_asm_o) $(api_c_o) -o $(api_bin)
+	i686-elf-ld -nostdlib -Map=$(patsubst %.c,%.map,$(api_c)) -Ttext 0x8000 --oformat binary -s $(api_asm_o) $(api_c_o) -o $(api_bin)
 
 $(api_asm_o):%.o:%.asm
 	@echo "Start to generate the .o file from .asm in api folder" $<
@@ -17,7 +17,7 @@ $(api_asm_o):%.o:%.asm
 
 $(api_c_o):%.o:%.c	
 	@echo "Start to generate the .o file from .c in api folder "$<
-	i386-elf-gcc $(CFLAGS) $< -o $@
+	i686-elf-gcc $(CFLAGS) $< -o $@
 
 .PHONY:clean
 clean:

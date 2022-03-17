@@ -137,6 +137,8 @@ int fifo32_get(struct FIFO32 *fifo);
 int fifo32_status(struct FIFO32 *fifo);
 
 /* tool.c*/
+#include <float.h>
+#include <limits.h>
 #include <stdarg.h>
 #include <stddef.h>
 // #include <string.h>
