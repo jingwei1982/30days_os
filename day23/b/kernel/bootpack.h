@@ -153,6 +153,8 @@ int strcmp(const char *str1, const char *str2);
 int strncmp(const char *str1, const char *str2, int count);
 size_t strlen(const char *str);
 size_t strnlen(const char *str, size_t maxsize);
+int rand(void);
+void srand(unsigned int seed);
 
 /*mouse.c*/
 struct MOUSE_DEC
