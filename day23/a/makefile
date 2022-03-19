@@ -62,11 +62,11 @@ $(asms_o):%.o:%.asm
 
 $(c_o):%.o:%.c $(c_include)
 	@echo "Dealing with "$<
-	i386-elf-gcc $(CFLAGS) $< -o $@
+	i686-elf-gcc $(CFLAGS) $< -o $@
 
 $(kernel_bin):$(asms_o) $(c_o)
 	@echo "Start to ld the kernel file."
-	i386-elf-ld -nostdlib -Map=kernel.map -Ttext 0x030400 -s $(asms_o) $(c_o) -o $(kernel_bin)
+	i686-elf-ld -nostdlib -Map=kernel.map -Ttext 0x030400 -s $(asms_o) $(c_o) -o $(kernel_bin)
 
 run:$(target)
 	bochs -f $(bochs_conf)
